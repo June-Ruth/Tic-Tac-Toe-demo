@@ -31,7 +31,7 @@ jobs:
           npm run test
 
       - name: Code Coverage Summary Report
-        uses: saschanowak/CloverCodeCoverageSummary@v1.0.1
+        uses: saschanowak/CloverCodeCoverageSummary@latest
         with:
           filename: clover.xml
 
