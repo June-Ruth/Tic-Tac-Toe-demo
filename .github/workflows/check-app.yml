@@ -1,0 +1,42 @@
+name : Check - Tic-Tac-Toe
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+
+jobs:
+  tests:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Clone Project
+        uses: actions/checkout@v4
+
+      - name: Setup NodeJS
+        uses: actions/setup-node@v3
+        with:
+          node-version: '18'
+
+      - name: Install dependencies
+        run: |
+          npm install
+
+      - name: Execute Node Build
+        run: |
+          npm run build
+
+      - name: Execute Node Tests
+        run: |
+          npm run test
+
+  distribution:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Store production artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: distribution
+          path: |
+            **/build/static/js/
+            **/build/static/css/
