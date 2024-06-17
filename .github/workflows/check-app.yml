@@ -27,20 +27,13 @@ jobs:
           npm run build
 
       - name: Execute Node Tests
-        uses: saschanowak/CloverCodeCoverageSummary@1.0.1
         run: |
           npm test -- --coverage
+
+      - name: Code Coverage Summary
+        uses: clearlyip/code-coverage-report-action@v4
         with:
-          filename: clover.xml
-
-      #- name: Code Coverage Summary Report
-
-
-      - name: Add Code Coverage to Job Summary
-        run: |
-          cat code-coverage-summary.md >> $GITHUB_STEP_SUMMARY
-          cat code-coverage-details.md >> $GITHUB_STEP_SUMMARY
-  
+          filename: 'coverage/clover.xml'
 
   distribution:
     runs-on: ubuntu-latest
