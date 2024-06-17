@@ -27,13 +27,14 @@ jobs:
           npm run build
 
       - name: Execute Node Tests
+        uses: saschanowak/CloverCodeCoverageSummary@1.0.1
         run: |
           npm test -- --coverage
-
-      - name: Code Coverage Summary Report
-        uses: saschanowak/CloverCodeCoverageSummary@1.0.1
         with:
           filename: clover.xml
+
+      #- name: Code Coverage Summary Report
+
 
       - name: Add Code Coverage to Job Summary
         run: |
