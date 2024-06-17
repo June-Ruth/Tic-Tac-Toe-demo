@@ -28,7 +28,7 @@ jobs:
 
       - name: Execute Node Tests
         run: |
-          npm test -- --coverage'
+          npm test -- --coverage
 
       - name: Code Coverage Summary Report
         uses: saschanowak/CloverCodeCoverageSummary@1.0.1
