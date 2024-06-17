@@ -35,10 +35,10 @@ jobs:
         with:
           filename: clover.xml
 
-      #- name: Add Code Coverage to Job Summary
-      #  run: |
-      #    cat code-coverage-summary.md >> $GITHUB_STEP_SUMMARY
-      #    cat code-coverage-details.md >> $GITHUB_STEP_SUMMARY
+      - name: Add Code Coverage to Job Summary
+        run: |
+          cat code-coverage-summary.md >> $GITHUB_STEP_SUMMARY
+          cat code-coverage-details.md >> $GITHUB_STEP_SUMMARY
   
 
   distribution:
