@@ -5,7 +5,7 @@ import App from './App';
 
 test('renders Tic-Tac-Toe title', () => {
   render(<App />);
-  const linkElement = screen.getByText(/Welcome to Tic-Tac-Toe/i);
+  const linkElement = screen.getByText(/Welcome to TP/i);
   expect(linkElement).toBeInTheDocument();
 });
 
